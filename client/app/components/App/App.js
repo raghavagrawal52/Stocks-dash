@@ -1,17 +1,8 @@
-import React, { Component } from 'react';
-
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import React, { Component } from "react";
 
 const App = ({ children }) => (
   <>
-    <Header />
-
-    <main>
-      {children}
-    </main>
-
-    <Footer />
+    <main>{children}</main>
   </>
 );
 

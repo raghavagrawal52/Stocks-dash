@@ -2,7 +2,7 @@ const request = require("superagent");
 
 module.exports = app => {
   app.post("/api/stock/portfolio", function(req, res, next) {
-    const apiKey = "demo";
+    const apiKey = "BXM16Z3F7IW708GG";
     //Assuming look up the user
     // Retrieving the ticker symbols
     const tickers = ["MSFT"];
@@ -16,7 +16,7 @@ module.exports = app => {
       let ticker = tickers[i];
       request
         .get("https://www.alphavantage.co/query")
-        .query({ function: "TIME_SERIES_DAILY" })
+        .query({ function: "TIME_SERIES_DAILY_ADJUSTED" })
         .query({ symbol: ticker })
         .query({ apikey: apiKey })
         .then(response => {
@@ -36,5 +36,3 @@ module.exports = app => {
     }
   });
 };
-
-// API KEY = BXM16Z3F7IW708GG

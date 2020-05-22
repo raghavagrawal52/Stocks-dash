@@ -14,17 +14,17 @@ class Profile extends Component {
 
   fetchProfileStockInfo() {
     fetch("/api/stock/portfolio", { method: "POST" })
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         if (json.success) {
           this.setState({
             isLoading: false,
-            results: json.results
+            results: json.results,
           });
         } else {
           this.setState({
             isLoading: false,
-            error: json.message
+            error: json.message,
           });
         }
       });
@@ -50,7 +50,7 @@ class Profile extends Component {
     return (
       <div>
         <p>Profile</p>
-        {results.map(result => (
+        {results.map((result) => (
           <StockInfo data={result} />
         ))}
       </div>

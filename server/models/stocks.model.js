@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 
 const stockSchema = new Schema(
   {
-    username: { type: String, required: true },
     symbol: String,
+    current: Number,
+    chartInfo: Object,
   },
   {
     timestamps: true,

@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchStock } from '../actions';
+import GoogleAuth from './GoogleAuth';
 
 class StockInfo extends React.Component {
   componentDidMount() {
     this.props.fetchStock();
   }
   render() {
+    console.log(this.props);
     if (!this.props.stocks) {
       return <div>Loading...</div>;
     } else {
@@ -14,7 +16,7 @@ class StockInfo extends React.Component {
         return (
           <div>
             <p>{stock.symbol}</p>
-            <p>Stock X</p>
+            <GoogleAuth />
           </div>
         );
       });
